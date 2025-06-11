@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Nandini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #eef2f3, #8e9eab);
+      color: #333;
+    }
+    nav {
+      background: #3b41b5;
+      padding: 15px 0;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      padding: 12px 18px;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+    nav a:hover {
+      background: #5e63e6;
+      border-radius: 5px;
+    }
+    header {
+      background: linear-gradient(to right, #4e54c8, #8f94fb);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 3em;
+      animation: pulse 2s infinite;
+    }
+    header p {
+      font-size: 1.3em;
+      animation: fadeIn 2s ease-in-out;
+    }
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+      animation: fadeInUp 1s ease-in-out;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    h2 {
+      color: #4e54c8;
+      font-size: 2em;
+      margin-bottom: 20px;
+      border-left: 5px solid #4e54c8;
+      padding-left: 10px;
+    }
+    footer {
+      background: #3b41b5;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="animate__animated animate__fadeInDown">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="education.html">Education</a>
+  <a href="skills.html">Skills</a>
+  <a href="projects.html">Projects</a>
+  <a href="certifications.html">Certifications</a>
+  <a href="strengths.html">Strengths</a>
+  <a href="contact.html">Contact</a>
+  <a href="PANDILLAPALLE NANDINI-RESUME.pdf">Resume</a>
+</nav>
+
+<header class="animate__animated animate__zoomIn">
+  <h1>Nandini Reddy</h1>
+  <p>Java Full Stack Developer | Fresher</p>
+</header>
+
+<section class="animate__animated animate__fadeInUp">
+  <h2>Welcome</h2>
+  <div class="card animate__animated animate__fadeIn">
+    <p>Hello! I'm Nandini, a passionate and motivated B.Tech graduate in Electronics and Communication Engineering. I’ve successfully completed Java Full Stack Development training at TAP Academy, where I gained hands-on experience in building dynamic, responsive, and user-friendly web applications. I’m enthusiastic about leveraging my skills to create impactful digital solutions. Feel free to explore my projects, skills, and educational background using the navigation menu above.</p>
+  </div>
+</section>
+
+
+
+</body>
+</html>
