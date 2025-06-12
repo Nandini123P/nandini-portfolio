@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Education | Nandini</title>
+  <title>Education & Certifications | Nandini</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(to right, #eef2f3, #8e9eab);
-      color: #333;
       margin: 0;
+      color: #333;
     }
     nav {
       background: #3b41b5;
       padding: 15px 0;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     nav a {
       color: white;
@@ -32,34 +31,70 @@
       border-radius: 5px;
     }
     header {
-      background: linear-gradient(to right, #4e54c8, #8f94fb);
-      color: white;
       text-align: center;
       padding: 60px 20px;
+      background: linear-gradient(to right, #4e54c8, #8f94fb);
+      color: white;
     }
     header h1 {
       font-size: 2.8em;
       margin: 0;
       animation: pulse 2s infinite;
     }
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-      animation: fadeInUp 1s ease-in-out;
+    .section-title {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 2em;
     }
-    .card {
-      background: white;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    .education-grid, .certificate-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin: 30px;
+    }
+    .edu-card, .cert-card {
+      width: 200px;
+      text-align: center;
+      cursor: pointer;
       transition: transform 0.3s;
     }
-    .card:hover {
-      transform: scale(1.02);
+    .edu-card img, .cert-card img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
-    ul {
-      padding-left: 20px;
+    .edu-card:hover, .cert-card:hover {
+      transform: scale(1.05);
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding-top: 80px;
+    }
+    .modal-content {
+      background: #fff;
+      margin: auto;
+      padding: 20px;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 12px;
+      text-align: center;
+      animation: fadeInUp 0.5s ease;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover {
+      color: black;
+      cursor: pointer;
     }
     footer {
       background: #3b41b5;
@@ -67,48 +102,171 @@
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
-      animation: fadeIn 2s ease-in-out;
     }
     @keyframes fadeInUp {
       0% { opacity: 0; transform: translateY(40px); }
       100% { opacity: 1; transform: translateY(0); }
     }
     @keyframes pulse {
-      0% { transform: scale(1); }
+      0%, 100% { transform: scale(1); }
       50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
     }
   </style>
 </head>
 <body>
 
-<nav class="animate__animated animate__fadeInDown">
+<!-- NAVBAR -->
+<nav class="animate_animated animate_fadeInDown">
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="education.html">Education</a>
   <a href="skills.html">Skills</a>
   <a href="projects.html">Projects</a>
-  <a href="certifications.html">Certifications</a>
-  <a href="strengths.html">Strengths</a>
   <a href="contact.html">Contact</a>
   <a href="PANDILLAPALLE NANDINI-RESUME.pdf">Resume</a>
 </nav>
 
+
+<!-- HEADER -->
 <header class="animate__animated animate__zoomIn">
-  <h1>Education</h1>
+  <h1>My Educational Journey & Certifications</h1>
 </header>
 
-<section class="animate__animated animate__fadeInUp">
-  <div class="card animate__animated animate__fadeIn">
-    <ul>
-      <li><strong>B.Tech in Electronics and Communication Engineering</strong><br>KSRM College of Engineering, 2020 – 2024 | CGPA: 8.93</li>
-      <li><strong>Intermediate</strong><br>Sri Chaitanya Jr. College, 2018 – 2020 | CGPA: 9.32</li>
-      <li><strong>10th Grade</strong><br>Siddhartha High School, 2017 – 2018 | CGPA: 9.7</li>
-    </ul>
+<!-- EDUCATION SECTION -->
+<div class="section-title">Education</div>
+<section class="education-grid">
+  <div class="edu-card" onclick="openModal('modalEdu1')">
+    <img src="KSRM.jpg" alt="B.Tech">
+    <p>B.Tech - KSRM</p>
+  </div>
+  <div class="edu-card" onclick="openModal('modalEdu2')">
+    <img src="sri chaitanya college.jpeg" alt="Intermediate">
+    <p>Intermediate - Sri Chaitanya</p>
+  </div>
+  <div class="edu-card" onclick="openModal('modalEdu3')">
+    <img src="school.jpeg" alt="10th">
+    <p>10th - Siddhartha</p>
   </div>
 </section>
 
+<!-- MODALS - EDUCATION -->
+<div id="modalEdu1" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modalEdu1')">&times;</span>
+    <h2>B.Tech in Electronics and Communication Engineering</h2>
+    <p>KSRM College of Engineering<br>2020 – 2024<br>CGPA: 8.93</p>
+  </div>
+</div>
 
+<div id="modalEdu2" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modalEdu2')">&times;</span>
+    <h2>Intermediate</h2>
+    <p>Sri Chaitanya Jr. College<br>2018 – 2020<br>CGPA: 9.32</p>
+  </div>
+</div>
+
+<div id="modalEdu3" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modalEdu3')">&times;</span>
+    <h2>10th Grade</h2>
+    <p>Siddhartha High School<br>2017 – 2018<br>CGPA: 9.7</p>
+  </div>
+</div>
+
+<!-- CERTIFICATIONS SECTION -->
+<div class="section-title">Certifications</div>
+<section class="certificate-grid">
+  <div class="cert-card" onclick="openModal('modalCert1')">
+    <img src="tapacademy.jpg" alt="Tap Academy">
+    <p>Tap Academy</p>
+  </div>
+  <div class="cert-card" onclick="openModal('modalCert2')">
+    <img src="nptl.jpg" alt="NPTEL">
+    <p>NPTEL Cloud</p>
+  </div>
+
+  <div class="cert-card" onclick="openModal('modalCert4')">
+    <img src="azure.jpg" alt="Azure AI Fundamentals">
+    <p>Azure AI Fundamentals</p>
+  </div>
+  <div class="cert-card" onclick="openModal('modalCert5')">
+    <img src="cybersecurity.jpg" alt="Cybersecurity">
+    <p>Cybersecurity - NASSCOM</p>
+  </div>
+  <div class="cert-card" onclick="openModal('modalCert6')">
+    <img src="pantech e learning.jpg" alt="Pantech Java Full Stack">
+    <p>Pantech E-learning</p>
+  </div>
+</section>
+
+<!-- MODALS - CERTIFICATIONS -->
+<div id="modalCert1" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modalCert1')">&times;</span>
+    <h2>Full Stack Web Development</h2>
+    <p>Tap Academy<br>Learned Java, JEE, Hibernate, Spring, MySQL, and built end-to-end web applications.</p>
+  </div>
+</div>
+
+<div id="modalCert2" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modalCert2')">&times;</span>
+    <h2>NPTEL Cloud Computing</h2>
+    <p>Completed NPTEL’s course covering cloud models, services, and deployment concepts.</p>
+  </div>
+</div>
+
+<div id="modalCert3" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modalCert3')">&times;</span>
+    <h2>Microsoft Azure Certification</h2>
+    <p>Certified in cloud deployment and services using Microsoft Azure platform.</p>
+  </div>
+</div>
+
+<div id="modalCert4" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modalCert4')">&times;</span>
+    <h2>Microsoft Azure AI Fundamentals</h2>
+    <p>Fundamentals of Artificial Intelligence and its implementation on Azure cloud.</p>
+  </div>
+</div>
+
+<div id="modalCert5" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modalCert5')">&times;</span>
+    <h2>Cybersecurity Essentials</h2>
+    <p>Certified by NASSCOM & MeitY on foundational cybersecurity awareness and best practices.</p>
+  </div>
+</div>
+
+<div id="modalCert6" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modalCert6')">&times;</span>
+    <h2>Java Full Stack – Pantech E-learning</h2>
+    <p>Completed the basic full stack Java program offered by Pantech for industry-ready development.</p>
+  </div>
+</div>
+
+
+
+<!-- JS SCRIPT -->
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = "block";
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    document.querySelectorAll('.modal').forEach(modal => {
+      if (event.target == modal) modal.style.display = "none";
+    });
+  }
+</script>
 
 </body>
 </html>
