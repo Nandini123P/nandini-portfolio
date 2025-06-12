@@ -8,17 +8,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <style>
     body {
+      margin: 0;
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(to right, #eef2f3, #8e9eab);
       color: #333;
-      margin: 0;
     }
+
     nav {
       background: #3b41b5;
       padding: 15px 0;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
+
     nav a {
       color: white;
       margin: 0 15px;
@@ -27,80 +32,117 @@
       display: inline-block;
       transition: background 0.3s ease;
     }
+
     nav a:hover {
       background: #5e63e6;
       border-radius: 5px;
     }
+
     header {
       background: linear-gradient(to right, #4e54c8, #8f94fb);
       color: white;
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 20px;
     }
+
     header h1 {
-      font-size: 2.8em;
+      font-size: 3em;
       margin: 0;
       animation: pulse 2s infinite;
     }
+
     section {
       max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
+      margin: 60px auto;
+      padding: 20px;
       animation: fadeInUp 1s ease-in-out;
     }
+
     .card {
-      background: white;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
+
     .card:hover {
       transform: scale(1.02);
     }
+
+    .card p {
+      font-size: 1.2em;
+      line-height: 1.8em;
+      text-align: justify;
+    }
+
     footer {
       background: #3b41b5;
       color: white;
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
+      margin-top: 60px;
     }
+
     @keyframes fadeInUp {
       0% { opacity: 0; transform: translateY(40px); }
       100% { opacity: 1; transform: translateY(0); }
     }
+
     @keyframes pulse {
-      0% { transform: scale(1); }
+      0%, 100% { transform: scale(1); }
       50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
+    }
+
+    @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+      .card {
+        padding: 25px;
+      }
+      .card p {
+        font-size: 1em;
+      }
     }
   </style>
 </head>
 <body>
 
+<!-- Navbar -->
 <nav class="animate__animated animate__fadeInDown">
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="education.html">Education</a>
   <a href="skills.html">Skills</a>
   <a href="projects.html">Projects</a>
-  <a href="certifications.html">Certifications</a>
-  <a href="strengths.html">Strengths</a>
   <a href="contact.html">Contact</a>
   <a href="PANDILLAPALLE NANDINI-RESUME.pdf">Resume</a>
 </nav>
 
+<!-- Header -->
 <header class="animate__animated animate__zoomIn">
   <h1>About Me</h1>
 </header>
 
-<section class="animate__animated animate__fadeInLeft">
-  <div class="card animate__animated animate__fadeIn">
-    <p>I am a recent B.Tech graduate in Electronics and Communication Engineering from KSRM College of Engineering with a CGPA of 8.93. I am passionate about technology and problem-solving, and I am seeking an entry-level software engineer role where I can apply my programming knowledge and contribute to real-world projects. I am trained in Java Full Stack Development and cloud computing technologies like AWS and Azure.</p>
+<!-- Main Content -->
+<section class="animate__animated animate__fadeInUp">
+  <div class="card">
+<p>
+  I am a recent B.Tech graduate in Electronics and Communication Engineering from KSRM College of Engineering with a CGPA of 8.93.
+  Passionate about technology and problem-solving, I am seeking an entry-level Software Engineer role where I can apply my programming knowledge and contribute to impactful projects.
+  <br><br>
+  I am trained in Java Full Stack Development and cloud computing technologies such as AWS and Azure.
+  My strengths lie in writing clean code, learning quickly, and collaborating effectively in a team environment.
+  <br><br>
+  I developed a <strong>Food Ordering Web Application named "Nandi Foods"</strong> using Java, JSP, Servlets, and MySQL.
+  This project allowed me to implement user authentication, dynamic menus, cart functionality, and database integration—strengthening both my frontend and backend skills.
+</p>
+
   </div>
 </section>
-
-
 
 </body>
 </html>
